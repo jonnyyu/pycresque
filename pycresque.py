@@ -6,5 +6,5 @@ class Cresque:
 
     def enqueue(self, queue, name, args):
         queue_name = 'resque:queue:' + queue
-        pay_load = json.dumps({ 'class' : name, 'args': args})
+        pay_load = json.dumps({ 'class' : name, 'args': [args,]})
         self.redis.rpush(queue_name, pay_load)

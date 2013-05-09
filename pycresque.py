@@ -8,3 +8,6 @@ class Cresque:
         queue_name = 'resque:queue:' + queue
         pay_load = json.dumps({ 'class' : name, 'args': [args,]})
         self.redis.rpush(queue_name, pay_load)
+
+    def test(self):
+        pass
